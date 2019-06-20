@@ -17,7 +17,7 @@ Usuários
         <li class="list-group-item">{{ $usuario->email}}</li>
         <li class="list-group-item">{{ $usuario->descricao}}</li>
         <li class="list-group-item">{{ $usuario->foto}}</li>
-        <form method = "post" action="/usuarios/remover/{{$usuario->id}}">
+        <form method = "post" action="/usuarios/remover/{{$usuario->id}}" onsubmit="return confirm('Tem certeza que deseja excluir o usuário?')">
         @csrf
             <button class="btn btn-danger">Excluir</button>
         </form>

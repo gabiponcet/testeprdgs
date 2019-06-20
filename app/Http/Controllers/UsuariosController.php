@@ -24,7 +24,9 @@ class UsuariosController extends Controller
     }
 
     public function destroy(Request $request){
-        echo $request->id;
+        Usuarios::destroy($request->id);
+        $request->session()->flash('mensagem', "Usuário removido com sucesso!");
+        return redirect('/usuarios');
     }
 }
 
