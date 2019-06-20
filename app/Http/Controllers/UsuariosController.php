@@ -20,13 +20,13 @@ class UsuariosController extends Controller
     public function store(Request $request){
         $usuario = Usuarios::create($request->all());
         $request->session()->flash('mensagem', "Usuário {$usuario->nome} cadastrado com sucesso!");
-        return redirect('/usuarios');
+        return redirect()->route('usuarios.index');
     }
 
     public function destroy(Request $request){
         Usuarios::destroy($request->id);
         $request->session()->flash('mensagem', "Usuário removido com sucesso!");
-        return redirect('/usuarios');
+        return redirect()->route('usuarios.index');
     }
 }
 

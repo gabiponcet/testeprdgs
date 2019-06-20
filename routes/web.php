@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/usuarios', 'UsuariosController@index');
-Route::get('/usuarios/criar', 'UsuariosController@create');
+Route::get('/usuarios', 'UsuariosController@index')->name('usuarios.index');
+Route::get('/usuarios/criar', 'UsuariosController@create')->name('form_criar_usuario');
 Route::post('/usuarios/criar', 'UsuariosController@store');
 Route::post('/usuarios/remover/{id}', 'UsuariosController@destroy');
