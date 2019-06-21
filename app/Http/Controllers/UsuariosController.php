@@ -2,7 +2,8 @@
 
 namespace App\Http\Controllers;
 use App\Usuarios;
-use Illuminate\Http\Request; 
+use Illuminate\Http\Request;  
+use App\Http\Requests\UsuariosFormRequest;
 
 class UsuariosController extends Controller
 {
@@ -17,10 +18,12 @@ class UsuariosController extends Controller
         return view('usuarios.create');
     }
 
-    public function store(Request $request){
+    public function store(UsuariosFormRequest $request){
+    
         $usuario = Usuarios::create($request->all());
         $request->session()->flash('mensagem', "Usuário {$usuario->nome} cadastrado com sucesso!");
         return redirect()->route('usuarios.index');
+    
     }
 
     public function destroy(Request $request){
