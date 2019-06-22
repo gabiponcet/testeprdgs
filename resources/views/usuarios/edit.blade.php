@@ -1,7 +1,7 @@
 @extends('layout')
 
 @section('cabecalho')
-Adicionar usuário
+Editar cadastro
 @endsection
 
 @section('conteudo')
@@ -14,9 +14,9 @@ Adicionar usuário
         </ul>
     </div>
 @endif
-    <form action="" method="post" enctype="multipart/form-data"  enctype="multipart/form-data">
-    @csrf_field
-     {{ method_field('PUT') }}
+    <form method="post" enctype="multipart/form-data"  action="{{route('usuarios.update', $usuario->id)}}" enctype="multipart/form-data">
+    {{csrf_field()}}
+    {{method_field('PUT') }}
         <div class="form-group">
             <label for="nome">Nome:</label><input type="text" class="form-control" name="nome" value="{{$usuario->nome}}">
             <label for="sobrenome">Sobrenome:</label><input type="text" class="form-control" name="sobrenome" value="{{$usuario->sobrenome}}">

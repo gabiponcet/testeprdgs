@@ -58,21 +58,21 @@ class UsuariosController extends Controller
     }
 
     public function update(UsuariosFormRequest $request, $id){
-        // $usuario = Usuarios::findOrFail($id);
-        // $usuario->nome = $request->nome;
-        // $usuario->sobrenome = $request->sobrenome;
-        // $usuario->email = $request->email;
-        // $usuario->descricao = $request->descricao;
-        // if($request->hasFile('foto')){
-        //     Storage::delete($usuario->foto);
-        //     $nome = uniqid(date('HisYmd'));
-        //     $extensao = $request->foto->extension();
-        //     $nomeArquivo = "{$nome}.{$extensao}";
-        //     $upload = $request->foto->storeAs('usuarios', $nomeArquivo);
-        //     $usuario->foto = $upload;
-        // }
-        // $usuario->update();
-        // return redirect()->route('usuario.index');
+        $usuario = Usuarios::findOrFail($id);
+        $usuario->nome = $request->nome;
+        $usuario->sobrenome = $request->sobrenome;
+        $usuario->email = $request->email;
+        $usuario->descricao = $request->descricao;
+        if($request->hasFile('foto')){
+            //Storage::delete($usuario->foto);
+            $nome = uniqid(date('HisYmd'));
+            $extensao = $request->foto->extension();
+            $nomeArquivo = "{$nome}.{$extensao}";
+            $upload = $request->foto->storeAs('usuarios', $nomeArquivo);
+            $usuario->foto = $upload;
+        }
+        $usuario->update();
+        return redirect()->route('usuarios.index');
         
         //AQUI
         // $dataForm = $request->all();
@@ -86,7 +86,7 @@ class UsuariosController extends Controller
         // else{
         //     return redirect()->route('usuarios.edit', $id->with(['errors'=> 'Falha ao editar']));
         // }
-        return "foi";
+
     }
 
 }
