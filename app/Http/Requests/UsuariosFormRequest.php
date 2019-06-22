@@ -28,7 +28,7 @@ class UsuariosFormRequest extends FormRequest
             'sobrenome'=> 'required',
             'email'=> 'required',
             'descricao'=> 'required',
-            'foto'=> 'required'
+            'foto'=> 'required|mimes:png,jpeg,gif,jpg'
         ];
     }
 

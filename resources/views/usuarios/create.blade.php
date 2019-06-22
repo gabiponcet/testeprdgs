@@ -14,7 +14,7 @@ Adicionar usuário
         </ul>
     </div>
 @endif
-    <form action="" method="post">
+    <form action="" method="post" enctype="multipart/form-data">
     @csrf <!-- token de verificação -->
         <div class="form-group">
             <label for="nome">Nome:</label><input type="text" class="form-control" name="nome">

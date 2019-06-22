@@ -19,9 +19,23 @@ class UsuariosController extends Controller
     }
 
     public function store(UsuariosFormRequest $request){
-    
-        $usuario = Usuarios::create($request->all());
-        $request->session()->flash('mensagem', "Usuário {$usuario->nome} cadastrado com sucesso!");
+        
+        $usuario = new Usuarios;
+        $usuario->nome=$request->nome;
+        $usuario->sobrenome=$request->sobrenome;
+        $usuario->email=$request->email;
+        $usuario->descricao=$request->descricao;
+        $nome=uniqid(date('HisYmd')); 
+        $extensao = $request->foto->extension();
+        $nomeArquivo = "{$nome}.{$extensao}";
+        //upload da img
+        $upload = $request->foto->storeAs('usuarios',$nomeArquivo);
+        $usuario->foto=$upload;
+        //salva td do objeto usuario
+        $usuario->save();
+        
+        // $usuario = Usuarios::create($request->all());
+        // $request->session()->flash('mensagem', "Usuário {$usuario->nome} cadastrado com sucesso!");
         return redirect()->route('usuarios.index');
     
     }
@@ -30,6 +44,13 @@ class UsuariosController extends Controller
         Usuarios::destroy($request->id);
         $request->session()->flash('mensagem', "Usuário removido com sucesso!");
         return redirect()->route('usuarios.index');
+    }
+
+    public function edit($id){
+        // $usuario = $this->usuario->find($id);
+        // $titulo = "Editar Usuário: {$usuario->nome}";
+        $Usuario = Usuarios::findOrFail($id);
+        return view('usuarios.create', compact('usuarios'));
     }
 }
 
