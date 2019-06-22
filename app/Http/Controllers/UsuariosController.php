@@ -47,10 +47,13 @@ class UsuariosController extends Controller
     }
 
     public function edit($id){
-        // $usuario = $this->usuario->find($id);
+        // $usuario = usuarios::find($id);
         // $titulo = "Editar Usuário: {$usuario->nome}";
-        $Usuario = Usuarios::findOrFail($id);
-        return view('usuarios.create', compact('usuarios'));
+        // $campos = ['nome', 'sobrenome', 'email', 'descricao', 'foto'];
+        // return view('usuarios.create', compact('usuario', 'titulo', 'campos'));
+        $usuario = Usuarios::findOrFail($id);
+        return view('usuarios.create', compact('usuario'));
+        
     }
 }
 

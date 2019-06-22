@@ -17,7 +17,7 @@ Adicionar usuário
     <form action="" method="post" enctype="multipart/form-data">
     @csrf <!-- token de verificação -->
         <div class="form-group">
-            <label for="nome">Nome:</label><input type="text" class="form-control" name="nome">
+            <label for="nome">Nome:</label><input type="text" class="form-control" name="nome" >
             <label for="sobrenome">Sobrenome:</label><input type="text" class="form-control" name="sobrenome">
             <label for="email">Email:</label><input type="email" class="form-control" name="email" placeholder="email@email.com">
             <label for="descricao">Descreva suas habilidades profissionais:</label><input type="text" class="form-control" name="descricao">
