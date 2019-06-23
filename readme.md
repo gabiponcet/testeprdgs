@@ -7,6 +7,17 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
+##Como executar 
+* Utilizar o sistema operacional Windows
+* Instalar o Laravel em seu computador
+* Instalar o MySQL em seu computador
+* Instalar o Composer em seu computador
+* Iniciar o MySQL junto a um servidor local
+* Abrir o prompt de comando do computador e digitar: php artisan serve
+* Digitar na url do seu navegador: localhost:8000/usuarios
+
+
+
 ## About Laravel
 
 Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:

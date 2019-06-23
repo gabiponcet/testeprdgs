@@ -16,7 +16,7 @@ Usuários
     <li class="list-group-item d-flex justify-content-between align-itens-center">{{ $usuario->nome .' '. $usuario->sobrenome}}</li>
         <li class="list-group-item d-flex justify-content-between align-itens-center">{{ $usuario->email}}</li>
         <li class="list-group-item d-flex justify-content-between align-itens-center">{{ $usuario->descricao}}</li>
-       <img src="{!! asset('storage/app/usuarios'.$usuario->foto) !!}">
+       <img src="{!! asset('storage/'.$usuario->foto) !!}" width="200px" height="200px">
 
        <li>
 
