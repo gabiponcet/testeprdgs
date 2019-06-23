@@ -15,7 +15,8 @@
 * Iniciar o MySQL junto a um servidor local
 * Abrir o prompt de comando do computador e digitar: php artisan serve
 * Digitar na url do seu navegador: localhost:8000/usuarios
-
+* Ao executar o sistema pela primeira vez, adicionar um usuário, pois não foi criado um seed
+ 
 
 
 ## About Laravel
