@@ -7,7 +7,7 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-##Como executar 
+## Como executar 
 * Utilizar o sistema operacional Windows
 * Instalar o Laravel em seu computador
 * Instalar o MySQL em seu computador
@@ -16,7 +16,7 @@
 * Abrir o prompt de comando do computador e digitar: php artisan serve
 * Digitar na url do seu navegador: localhost:8000/usuarios
 * Ao executar o sistema pela primeira vez, adicionar um usuário, pois não foi criado um seed
- 
+
 
 
 ## About Laravel
